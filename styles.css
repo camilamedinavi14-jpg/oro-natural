@@ -199,4 +199,200 @@ main {
     display: flex;
     align-items: center;
     gap: 15px;
-    background-color: #fff8e
+    background-color: #fff8e8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.honey-number {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #b39b5a;
+}
+
+.honey-name {
+    flex-grow: 1;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.honey-price {
+    font-weight: bold;
+    color: #4a3e2e;
+    font-size: 1.2em;
+}
+
+.honey-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #b39b5a;
+}
+
+.form-container {
+    background-color: #fff8e8;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    text-align: center;
+    font-size: 1.8em;
+    color: #927e4e;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #4a3e2e;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    background-color: #f7f3e8;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #b39b5a;
+}
+
+.form-help-text {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #b39b5a;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #927e4e;
+}
+/* ======================================================= */
+/* MEDIA QUERIES - OPTIMIZACIÓN PARA MÓVILES (Menos de 600px) */
+/* ======================================================= */
+
+@media (max-width: 600px) {
+    /* --- LOGO Y ENCABEZADO --- */
+    
+    /* El contenedor del logo se hace más pequeño y centraliza */
+    .logo-container {
+        height: 180px; /* Reducir la altura en móviles */
+        padding: 10px;
+        flex-direction: row; /* Mantener en una línea horizontal */
+        flex-wrap: nowrap;
+    }
+
+    /* El logo principal y el texto se reducen */
+    .logo-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logo-text {
+        font-size: 1.8em; /* Reducir el tamaño de 'ORO NATURAL' */
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    /* Ocultar las abejas voladoras ya que su animación es muy pesada en móviles */
+    .flying-bee {
+        display: none; 
+    }
+
+    /* --- MENÚ DE NAVEGACIÓN (Se hace vertical) --- */
+    .nav-menu ul {
+        flex-direction: column; /* Apila los enlaces verticalmente para fácil clic */
+        gap: 0; /* Elimina el espacio entre enlaces */
+    }
+
+    .nav-menu li {
+        width: 100%; /* Cada elemento ocupa todo el ancho */
+        border-bottom: 1px solid #d9c8a2; /* Añadir un divisor sutil */
+    }
+
+    .nav-menu a {
+        padding: 12px 10px;
+        font-size: 1em;
+        display: block; /* Asegura que el área de clic sea grande */
+        text-align: center;
+    }
+    
+    /* El último elemento no necesita borde inferior */
+    .nav-menu ul li:last-child {
+        border-bottom: none;
+    }
+
+
+    /* --- CONTENIDO PRINCIPAL --- */
+    main {
+        padding: 10px;
+    }
+    
+    .section-title {
+        font-size: 1.5em; /* Títulos de sección más pequeños */
+    }
+    
+    /* Estilos para que el formulario se vea mejor */
+    .form-container {
+        padding: 15px;
+    }
+
+
+    /* --- VENTA DE MIELES --- */
+    
+    /* La lista de ventas de miel (honey-item) se apila para evitar desbordamiento */
+    .honey-item {
+        flex-direction: column; /* Apila imagen, nombre y precio */
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .honey-number {
+        /* Mueve el número a la izquierda si está en modo columna */
+        align-self: flex-start; 
+    }
+    
+    .honey-image {
+        order: -1; /* Mueve la imagen arriba en la pila */
+        margin-top: 10px;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .honey-name {
+        order: 1; 
+        font-size: 1.1em;
+    }
+    
+    .honey-price {
+        order: 2;
+        font-size: 1.1em;
+    }
+}
