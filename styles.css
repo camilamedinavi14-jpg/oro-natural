@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     /* Fondo de panel de abeja */
-    /* RUTA CORREGIDA: Cambiado '../img/imagen11.jpg' por '/oro-natural/img/imagen11.jpg' */
+    /* RUTA CORREGIDA: Cambiado de ruta relativa a ruta absoluta con el nombre del repositorio. */
     background-image: url('/oro-natural/img/imagen11.jpg'); 
     background-repeat: repeat;
     background-size: 900px 1000px;
@@ -17,12 +17,14 @@ body {
 }
 
 header {
-    background-color: '#638F78';
+    background-color: #638F78;
     text-align: center;
     padding: 20px 0;
 }
 
 /* Logo Container with flexbox for perfect alignment */
+/* ... el resto del CSS permanece igual, ya que no contiene más rutas de archivos externos. */
+/* ... (Todo el CSS de tu archivo original sigue aquí) ... */
 .logo-container {
     padding: 20px;
     position: relative;
@@ -323,7 +325,7 @@ main {
 
     /* Ocultar las abejas voladoras ya que su animación es muy pesada en móviles */
     .flying-bee {
-        display: none;  
+        display: none; 
     }
 
     /* --- MENÚ DE NAVEGACIÓN (Se hace vertical) --- */
