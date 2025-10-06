@@ -1,0 +1,397 @@
+/* Import the custom fonts, including the elegant EB Garamond */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Main Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Fondo de panel de abeja */
+    background-image: url('../img/imagen11.jpg'); /* RUTA CORREGIDA */
+    background-repeat: repeat;
+    background-size: 900px 1000px;
+    background-color: #f7f3e8;
+    color: #4a3e2e;
+}
+
+header {
+    background-color: #638F78;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Logo Container with flexbox for perfect alignment */
+.logo-container {
+    padding: 20px;
+    position: relative;
+    width: 95%;
+    height: 300px; /* Adjust height to give the bees room to fly */
+    display: flex; /* Use Flexbox to align items horizontally */
+    justify-content: center; /* Center the entire row of items */
+    align-items: center; /* Center items vertically */
+    overflow: hidden;
+}
+
+/* Styles for the flying bees */
+.flying-bee {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    z-index: 0; /* Places bees in the background layer */
+    opacity: 1.8;
+}
+
+/* Individual bee animations and starting positions */
+.bee-1 {
+    top: 20%;
+    left: -10%;
+    animation: flyAcross 15s linear infinite;
+    animation-delay: 0s;
+}
+
+.bee-2 {
+    top: 60%;
+    left: -20%;
+    animation: flyAcross 18s linear infinite;
+    animation-delay: 5s;
+}
+
+.bee-3 {
+    top: 40%;
+    left: -5%;
+    animation: flyAcross 12s linear infinite;
+    animation-delay: 10s;
+}
+
+/* The animation that moves the bees across the screen */
+@keyframes flyAcross {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(120vw); }
+}
+
+/* The central spinning logo with higher z-index */
+.circle-spin {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1; /* Makes it appear above the bees */
+}
+
+.logo-img {
+    width: 250px;
+    height: 250px;
+    display: block;
+}
+
+/* Styles for the custom logo text */
+.logo-text {
+    font-family: 'EB Garamond', serif; /* Correct font */
+    font-size: 3.5em; /* Correct size */
+    color: #36454F; /* Dark color for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo-text.left {
+    margin-right: 20px; /* Space between "ORO" and the logo */
+}
+
+.logo-text.right {
+    margin-left: 20px; /* Space between the logo and "NATURAL" */
+}
+
+/* Rest of the CSS remains the same */
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: #e6d8b2;
+    margin: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #4a3e2e;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.nav-menu a.active, .nav-menu a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.content-page {
+    display: none;
+}
+
+.content-page.active-page {
+    display: block;
+}
+
+.content-section {
+    background-color: #fff9e6;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    color: #b39b5a;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #f0e6c3;
+}
+
+.info-block {
+    margin-bottom: 30px;
+}
+
+.info-block h3 {
+    color: #927e4e;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.info-block ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.info-block .image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.info-block img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.honey-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.honey-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #fff8e8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.honey-number {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #b39b5a;
+}
+
+.honey-name {
+    flex-grow: 1;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.honey-price {
+    font-weight: bold;
+    color: #4a3e2e;
+    font-size: 1.2em;
+}
+
+.honey-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #b39b5a;
+}
+
+.form-container {
+    background-color: #fff8e8;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    text-align: center;
+    font-size: 1.8em;
+    color: #927e4e;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #4a3e2e;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    background-color: #f7f3e8;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #b39b5a;
+}
+
+.form-help-text {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #b39b5a;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #927e4e;
+}
+/* ======================================================= */
+/* MEDIA QUERIES - OPTIMIZACIÓN PARA MÓVILES (Menos de 600px) */
+/* ======================================================= */
+
+@media (max-width: 600px) {
+    /* --- LOGO Y ENCABEZADO --- */
+    
+    /* El contenedor del logo se hace más pequeño y centraliza */
+    .logo-container {
+        height: 180px; /* Reducir la altura en móviles */
+        padding: 10px;
+        flex-direction: row; /* Mantener en una línea horizontal */
+        flex-wrap: nowrap;
+    }
+
+    /* El logo principal y el texto se reducen */
+    .logo-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logo-text {
+        font-size: 1.8em; /* Reducir el tamaño de 'ORO NATURAL' */
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    /* Ocultar las abejas voladoras ya que su animación es muy pesada en móviles */
+    .flying-bee {
+        display: none; 
+    }
+
+    /* --- MENÚ DE NAVEGACIÓN (Se hace vertical) --- */
+    .nav-menu ul {
+        flex-direction: column; /* Apila los enlaces verticalmente para fácil clic */
+        gap: 0; /* Elimina el espacio entre enlaces */
+    }
+
+    .nav-menu li {
+        width: 100%; /* Cada elemento ocupa todo el ancho */
+        border-bottom: 1px solid #d9c8a2; /* Añadir un divisor sutil */
+    }
+
+    .nav-menu a {
+        padding: 12px 10px;
+        font-size: 1em;
+        display: block; /* Asegura que el área de clic sea grande */
+        text-align: center;
+    }
+    
+    /* El último elemento no necesita borde inferior */
+    .nav-menu ul li:last-child {
+        border-bottom: none;
+    }
+
+
+    /* --- CONTENIDO PRINCIPAL --- */
+    main {
+        padding: 10px;
+    }
+    
+    .section-title {
+        font-size: 1.5em; /* Títulos de sección más pequeños */
+    }
+    
+    /* Estilos para que el formulario se vea mejor */
+    .form-container {
+        padding: 15px;
+    }
+
+
+    /* --- VENTA DE MIELES --- */
+    
+    /* La lista de ventas de miel (honey-item) se apila para evitar desbordamiento */
+    .honey-item {
+        flex-direction: column; /* Apila imagen, nombre y precio */
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .honey-number {
+        /* Mueve el número a la izquierda si está en modo columna */
+        align-self: flex-start; 
+    }
+    
+    .honey-image {
+        order: -1; /* Mueve la imagen arriba en la pila */
+        margin-top: 10px;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .honey-name {
+        order: 1; 
+        font-size: 1.1em;
+    }
+    
+    .honey-price {
+        order: 2;
+        font-size: 1.1em;
+    }
+}
